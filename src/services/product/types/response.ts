@@ -1,3 +1,4 @@
 import { ProductType } from "../../../typing";
 
-export type contactResponse = ProductType[];
+export type ProductsResponse = ProductType[];
+export type ProductResponse = ProductType;
