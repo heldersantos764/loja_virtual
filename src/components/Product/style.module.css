@@ -1,0 +1,38 @@
+.price{
+    display: block;
+    width: 100%;
+}
+
+.card{
+    width: 13rem;
+}
+
+.card:hover{
+    box-shadow: 2px 2px 5px #ccc;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+.img{
+    height: 8rem;
+    margin: 0 auto;
+}
+
+.containerImg{
+    text-align: center;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.title{
+    display: clock;
+    height: 4rem;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.title:hover {
+    color: #0d6efd;
+    text-decoration: underline;
+}

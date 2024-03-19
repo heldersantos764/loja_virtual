@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Spinner } from "react-bootstrap";
-import Styles from './style.module.css';
+import Styles from "./style.module.css";
 
 const Loading: FC = () => {
   return (

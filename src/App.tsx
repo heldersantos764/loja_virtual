@@ -20,7 +20,7 @@ const Router: React.FC = () => {
             }
           />
           <Route path="/products/:id" element={
-            <DefaultLayout title="Detalhes do Produto">
+            <DefaultLayout title="Detalhes do Produto" hasBackButtom={true}>
               <ProductDetails/>
             </DefaultLayout>
           }/>

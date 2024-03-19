@@ -4,19 +4,34 @@ import { ProductResponse, ProductsResponse } from "./types/response";
 const useProductService = () => {
     const axiosInstance = getAxiosInstance();
 
-    const findAllProducts = async (): Promise<ProductsResponse> => {
-        const response = await axiosInstance.get('products');
-        return response.data;
+    const findAllProducts = async (): Promise<ProductsResponse | null> => {
+        try {
+            const response = await axiosInstance.get('products');
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            return null;
+        }
     }
 
-    const findProductsByCotegory = async (category: string): Promise<ProductsResponse> => {
-        const response = await axiosInstance.get(`produts/category/${category}`);
-        return response.data;
+    const findProductsByCotegory = async (category: string): Promise<ProductsResponse | null> => {
+        try {
+            const response = await axiosInstance.get(`produts/category/${category}`);
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            return null;
+        }
     }
 
-    const findProductById = async (id: string): Promise<ProductResponse> => {
-        const response = await axiosInstance.get(`products/${id}`);
-        return response.data;
+    const findProductById = async (id: string): Promise<ProductResponse | null> => {
+        try {
+            const response = await axiosInstance.get(`products/${id}`);
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            return null;
+        }
     }
 
     return { findAllProducts, findProductsByCotegory, findProductById };

@@ -1,28 +1,36 @@
 import { FC } from "react";
-import { Button, Card } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Card } from "react-bootstrap";
+import Style from "./style.module.css";
+import { formatCurrency, limitCharacters } from "../../util";
+import { useNavigate } from "react-router-dom";
 
 interface ProductProps {
   id: string;
   title: string;
   price: string;
   image: string;
-  description: string;
 }
 
 const Product: FC<ProductProps> = (props) => {
-  const { id, title, price, image, description } = props;
+  const { id, title, price, image } = props;
+  const navigate = useNavigate();
+
+  const handleClickOpenProduct = () : void => {
+    navigate(`/products/${id}`);
+  }
 
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={image} />
+    <Card className={Style.card} onClick={handleClickOpenProduct}>
+      <div className={Style.containerImg}>
+        <img src={image} alt="" className={Style.img} />
+      </div>
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text>
-          <div className="fs-3 fw-bold text-primary py-1">$ {price}</div>
-          {description}
+        <Card.Text className="d-flex flex-column">
+          <span className={Style.title}>{limitCharacters(title, 30)}</span>
+          <span className={`fs-3 fw-bold text-primary py-1 ${Style.price}`}>
+            {formatCurrency(price)}
+          </span>
         </Card.Text>
-        <Link to={`/products/${id}`} className="btn btn-primary">Ver mais</Link>
       </Card.Body>
     </Card>
   );
