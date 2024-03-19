@@ -9,7 +9,7 @@ import Loading from "../../components/Loading";
 interface Props {}
 
 const ProductDetails: FC<Props> = (props) => {
-  const [product, setProduct] = useState<ProductType | null >(null);
+  const [product, setProduct] = useState<ProductType | null>(null);
   const { findProductById } = useProductService();
   const { id } = useParams();
 
@@ -25,10 +25,10 @@ const ProductDetails: FC<Props> = (props) => {
   return (
     <>
       {!product ? (
-        <Loading/>
+        <Loading />
       ) : (
         <div className="row p-3 bg-light rounded-2">
-          <div className="col col-4">
+          <div className={`col col-4 ${Style.containerImg}`}>
             <img src={product?.image} alt="" className={Style.img} />
           </div>
           <div className="col col-8">

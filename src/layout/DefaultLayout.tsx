@@ -4,13 +4,13 @@ import { useNavigate } from "react-router-dom";
 
 interface DefaultLayoutProps {
   children: ReactNode;
-  title: string;
+  title?: string;
   hasBackButtom?: boolean;
 }
 
 const DefaultLayout: FC<DefaultLayoutProps> = ({
   children,
-  title,
+  title = 'Produtos',
   hasBackButtom = false,
 }) => {
   const navigate = useNavigate();

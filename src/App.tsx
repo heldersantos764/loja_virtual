@@ -14,7 +14,15 @@ const Router: React.FC = () => {
           <Route
             path="/"
             element={
-              <DefaultLayout title="Início">
+              <DefaultLayout>
+                <Home />
+              </DefaultLayout>
+            }
+          />
+           <Route
+            path="/home/:category"
+            element={
+              <DefaultLayout>
                 <Home />
               </DefaultLayout>
             }

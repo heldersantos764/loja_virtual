@@ -19,20 +19,12 @@ const Header: FC = () => {
             navbarScroll
           >
             <Link to="/" className="nav-link">Início</Link>
-            <Link to="/eletronics" className="nav-link">Eletrônicos</Link>
-            <Link to="/jewelery" className="nav-link">Jóias</Link>
-            <Link to="/men's clothing" className="nav-link">Roupas Masculinas</Link>
-            <Link to="/women's clothing" className="nav-link">Roupas Femininas</Link>
+            <Link to="/home/electronics" className="nav-link">Eletrônicos</Link>
+            <Link to="/home/jewelery" className="nav-link">Jóias</Link>
+            <Link to="/home/men's clothing" className="nav-link">Roupas Masculinas</Link>
+            <Link to="/home/women's clothing" className="nav-link">Roupas Femininas</Link>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Buscar</Button>
-          </Form>
+          <span>Teste</span>
         </Navbar.Collapse>
       </Container>
     </Navbar>

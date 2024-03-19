@@ -16,7 +16,7 @@ const useProductService = () => {
 
     const findProductsByCotegory = async (category: string): Promise<ProductsResponse | null> => {
         try {
-            const response = await axiosInstance.get(`produts/category/${category}`);
+            const response = await axiosInstance.get(`products/category/${category}`);
             return response.data;
         } catch (error) {
             console.error(error);
